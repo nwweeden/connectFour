@@ -70,7 +70,7 @@ function placeInTable(y, x) {
   currPiece.setAttribute('class', `piece player${currPlayer}`)
   // console.log(`height minus y: ${HEIGHT - y}`);
   let correctCell = document.getElementById(`${y}-${x}`);
-  correctCell.append(currPiece);
+  correctCell.appendChild(currPiece);
 }
 /** endGame: announce game end */
 function endGame(msg) {
@@ -141,7 +141,7 @@ function checkForWin() {
         board[y][x] === currPlayer
     );
   }
-  // TODO: read and understand this code. Add comments to help you.
+  //iterate through the board, check to see if four in a row any direction are filled, bounded by the board, and the same color
   for (var y = 0; y < HEIGHT; y++) {
     for (var x = 0; x < WIDTH; x++) {
       var horiz = [[y, x], [y, x + 1], [y, x + 2], [y, x + 3]];
